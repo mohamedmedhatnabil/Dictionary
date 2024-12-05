@@ -1,0 +1,4 @@
+C:\Phonee\Pl3 Repo\DictionaryVS\obj\Debug\net8.0\DictionaryVS.fsproj.AssemblyReference.cache
+C:\Phonee\Pl3 Repo\DictionaryVS\obj\Debug\net8.0\DictionaryVS.AssemblyInfoInputs.cache
+C:\Phonee\Pl3 Repo\DictionaryVS\obj\Debug\net8.0\DictionaryVS.AssemblyInfo.fs
+C:\Phonee\Pl3 Repo\DictionaryVS\obj\Debug\net8.0\DictionaryVS.fsproj.CoreCompileInputs.cache
