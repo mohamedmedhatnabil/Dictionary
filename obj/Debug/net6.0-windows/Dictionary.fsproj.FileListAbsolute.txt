@@ -1,0 +1,4 @@
+C:\Users\b2b\Downloads\F# Solution\Dictionary\obj\Debug\net6.0-windows\Dictionary.fsproj.AssemblyReference.cache
+C:\Users\b2b\Downloads\F# Solution\Dictionary\obj\Debug\net6.0-windows\Dictionary.AssemblyInfoInputs.cache
+C:\Users\b2b\Downloads\F# Solution\Dictionary\obj\Debug\net6.0-windows\Dictionary.AssemblyInfo.fs
+C:\Users\b2b\Downloads\F# Solution\Dictionary\obj\Debug\net6.0-windows\Dictionary.fsproj.CoreCompileInputs.cache
