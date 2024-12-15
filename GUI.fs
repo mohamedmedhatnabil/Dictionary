@@ -16,6 +16,7 @@ let startGUI () =
         let btnAdd = new Button(Text = "Add", Top = 100, Left = 20, Width = 100, Enabled = false) // Initially disabled
         let btnSearch = new Button(Text = "Search", Top = 100, Left = 130, Width = 100)
         let btnDelete = new Button(Text = "Delete", Top = 100, Left = 240, Width = 100)
+        let btnUpdate = new Button(Text = "Update", Top = 100, Left = 350, Width = 100)
         let lstDictionary = new ListBox(Top = 150, Left = 20, Width = 750, Height = 350)
 
         let mutable originalWord = "" // Variable to store the selected word for updates
@@ -42,7 +43,7 @@ let startGUI () =
             if not (String.IsNullOrWhiteSpace(word)) && not (String.IsNullOrWhiteSpace(definition)) then
                 addWord word definition
                 refreshList()
-                saveToFile "C:\Phonee\Parallel repo\final version\F# Solution\Dictionary.json"
+                saveToFile "dictionary.json"
                 txtWord.Clear()
                 txtDefinition.Clear()
             else
@@ -67,14 +68,47 @@ let startGUI () =
             if not (String.IsNullOrWhiteSpace(word)) then
                 deleteWord word
                 refreshList()
-                saveToFile "C:\Phonee\Parallel repo\final version\F# Solution\Dictionary.json"
+                saveToFile "dictionary.json"
                 txtWord.Clear()
                 txtDefinition.Clear()
             else
                 MessageBox.Show("Please select a word to delete.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error) |> ignore
         )
+
+        // Update the selected word and/or its definition in the dictionary
+        btnUpdate.Click.Add(fun _ -> 
+            let newWord = txtWord.Text
+            let newDefinition = txtDefinition.Text
+            if not (String.IsNullOrWhiteSpace(originalWord)) && not (String.IsNullOrWhiteSpace(newWord)) && not (String.IsNullOrWhiteSpace(newDefinition)) then
+                // Update the dictionary
+                if originalWord <> newWord then
+                    // If the word has changed, update the key in the dictionary directly
+                    dictionary <- dictionary.Remove(originalWord.ToLower()).Add(newWord.ToLower(), newDefinition)
+                else
+                    // If only the definition is updated
+                    updateWord originalWord newDefinition
+
+                // Update the ListBox item directly
+                let selectedIndex = lstDictionary.SelectedIndex
+                if selectedIndex >= 0 then
+                    lstDictionary.Items.[selectedIndex] <- $"{newWord}: {newDefinition}" // Update the selected item text
+
+                // Save changes to file
+                saveToFile "dictionary.json"
+
+                // Clear input fields and reset originalWord
+                txtWord.Clear()
+                txtDefinition.Clear()
+                originalWord <- "" 
+
+                // Show success message
+                MessageBox.Show("Word updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information) |> ignore
+            else
+                MessageBox.Show("Please select a word and enter valid changes.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error) |> ignore
+        )
+
         // Load data from file at startup
-        loadFromFile "C:\Phonee\Parallel repo\final version\F# Solution\Dictionary.json"
+        loadFromFile "dictionary.json"
         refreshList()
 
         // Enable Add button only if both fields are populated
@@ -95,7 +129,7 @@ let startGUI () =
 [<EntryPoint>]
 let main argv =
     // Load the dictionary from a file at startup
-    let filePath = "C:\Phonee\Parallel repo\final version\F# Solution\Dictionary.json"
+    let filePath = "dictionary.json"
     loadFromFile filePath
     startGUI ()
     0 // Return exit code
