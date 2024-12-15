@@ -4,7 +4,7 @@ open GUI
 
 [<EntryPoint>]
 let main argv =
-    let filePath = "C:\Phonee\Parallel repo\final version\F# Solution\Dictionary.json"
+    let filePath = "dictionary.json"
 
     // تحميل القاموس من ملف عند بدء التشغيل
     printfn "Loading dictionary from file..."
