@@ -1,39 +1,23 @@
 ﻿open System
-open System.IO
-open System.Windows.Forms
-open GUI 
+open DictionaryManager
+open GUI
 
-// Define a type for the dictionary entries
-type DictionaryEntry = {
-    Word: string
-    Definition: string
-}
-
-// Dictionary Manager Module
-module DictionaryManager =
-    // Store dictionary as an F# Map
-    let mutable dictionary = Map.empty<string, string>
-
-    // Add a word to the dictionary
-    let addWord word definition =
-        dictionary <- dictionary.Add(word.ToLower(), definition)
-        MessageBox.Show($"Word '{word}' added successfully.") |> ignore
-    // Search for words (case-insensitive)
-    let searchWord keyword =
-        let results =
-            dictionary
-            |> Map.filter (fun key _ -> key.Contains(keyword.ToLower()))
-        if results.IsEmpty then
-            MessageBox.Show($"No matches found for '{keyword}'.") |> ignore
-        else
-            let resultText = 
-                results |> Map.fold (fun acc key value -> acc + $"\n  {key}: {value}") ""
-            MessageBox.Show($"Search results for '{keyword}': {resultText}") |> ignore
-// Main Program
 [<EntryPoint>]
 let main argv =
+    let filePath = "C:\Phonee\Parallel repo\final version\F# Solution\Dictionary.json"
 
-    // Start the GUI
-    GUI.startGUI()
+    // تحميل القاموس من ملف عند بدء التشغيل
+    printfn "Loading dictionary from file..."
+    loadFromFile filePath
+
+    // بدء واجهة المستخدم
+    printfn "Starting GUI..."
+    startGUI()
+
+    // حفظ القاموس إلى الملف عند إغلاق التطبيق
+    AppDomain.CurrentDomain.ProcessExit.Add(fun _ -> 
+        printfn "Saving dictionary to file..."
+        saveToFile filePath
+    )
 
     0 // Exit code
