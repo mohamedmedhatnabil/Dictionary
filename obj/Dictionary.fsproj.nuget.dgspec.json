@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\b2b\\Downloads\\sarah\\F# Solution\\Dictionary\\Dictionary.fsproj": {}
+    "C:\\Phonee\\Pl3 Repo\\F# Solutionsa\\F# Solution\\Dictionary\\Dictionary.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\b2b\\Downloads\\sarah\\F# Solution\\Dictionary\\Dictionary.fsproj": {
+    "C:\\Phonee\\Pl3 Repo\\F# Solutionsa\\F# Solution\\Dictionary\\Dictionary.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\b2b\\Downloads\\sarah\\F# Solution\\Dictionary\\Dictionary.fsproj",
+        "projectUniqueName": "C:\\Phonee\\Pl3 Repo\\F# Solutionsa\\F# Solution\\Dictionary\\Dictionary.fsproj",
         "projectName": "Dictionary",
-        "projectPath": "C:\\Users\\b2b\\Downloads\\sarah\\F# Solution\\Dictionary\\Dictionary.fsproj",
-        "packagesPath": "C:\\Users\\b2b\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\b2b\\Downloads\\sarah\\F# Solution\\Dictionary\\obj\\",
+        "projectPath": "C:\\Phonee\\Pl3 Repo\\F# Solutionsa\\F# Solution\\Dictionary\\Dictionary.fsproj",
+        "packagesPath": "C:\\Users\\mohamed medhat\\.nuget\\packages\\",
+        "outputPath": "C:\\Phonee\\Pl3 Repo\\F# Solutionsa\\F# Solution\\Dictionary\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\b2b\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\mohamed medhat\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\9.0.101\\FSharp\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\8.0.404\\FSharp\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,8 +35,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net472": {
@@ -49,7 +44,7 @@
             "FSharp.Core": {
               "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
               "target": "Package",
-              "version": "[9.0.100, )",
+              "version": "[8.0.403, )",
               "generatePathProperty": true
             },
             "Newtonsoft.Json": {
@@ -63,11 +58,11 @@
               "generatePathProperty": true
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
-        "win-x86": {
+        "win7-x86": {
           "#import": []
         }
       }
